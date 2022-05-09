@@ -24,7 +24,7 @@
     "govuk-frontend": "^3.11.0"
   },
   "devDependencies": {
-    "jest": "^26.6.3",
+    "jest": "^28.1.0",
     "js-cookie": "^2.2.1"
   }
 }
