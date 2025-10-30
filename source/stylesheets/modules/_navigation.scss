@@ -18,20 +18,24 @@
   float: left;
 }
 
-.govuk-template--rebranded .govuk-service-navigation { //maybe see if there's a better way of doing this
-  background-color: $govuk-brand-colour;
 
+
+.govuk-template--rebranded .govuk-service-navigation { //maybe see if there's a better way of doing this
   .govuk-width-container{
   padding: govuk-spacing(2) 0;
   margin-bottom: govuk-spacing(6);
   border-top: 1px solid govuk-colour('light-blue');
   border-bottom: 1px solid govuk-colour('light-blue');
+
   }
 
-// align last item in the service navigation to the right on large vieport
-
 }
-
+.govuk-template--rebranded .govuk-service-navigation--inverse{
+  background-color: $govuk-brand-colour;
+  .govuk-service-navigation__toggle{
+    color: govuk-colour('white');
+  }
+}
 // .service-navigation { //old nav styling
 //   margin: 0;
 //   float: left;
