@@ -92,13 +92,15 @@
   }
 }
 
-.govuk-header__container--no-border {
-  border-bottom: 0;
-  margin-bottom: 0;
-}
+// .govuk-header__container--no-border {
+//   border-bottom: 0;
+//   margin-bottom: 0;
+// }
 @include govuk-media-query($from: tablet) {
-  .govuk-header__navigation-item:last-child {
-    margin-left: auto;
-    border-color: solid, red;
-  }
+  .govuk-service-navigation__wrapper{
+      width: 100%;
+      .govuk-header__navigation-item:last-child  {
+        margin-left: auto;
+      }
+    }
 }
