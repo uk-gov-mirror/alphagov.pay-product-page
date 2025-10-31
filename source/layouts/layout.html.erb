@@ -88,16 +88,16 @@
           </a>
         </div>
       </div>
-      <div class="<%= current_page.url == '/' ? 'govuk-service-navigation govuk-service-navigation--inverse' : 'govuk-service-navigation' %>"
-    data-module="govuk-service-navigation">
-    <div class="govuk-width-container">
-      <div class="govuk-service-navigation__container">
-        <nav aria-label="Menu" class="govuk-service-navigation__wrapper">
-          <button type="button" class="govuk-service-navigation__toggle govuk-js-service-navigation-toggle" aria-controls="navigation" hidden>
-            Menu
-          </button>
-          <ul class="govuk-service-navigation__list" id="navigation">
-          <%
+      <div
+        class="<%= current_page.url == '/' ? 'govuk-service-navigation govuk-service-navigation--inverse' : 'govuk-service-navigation' %>"
+        data-module="govuk-service-navigation"
+      >
+        <div class="govuk-width-container">
+          <div class="govuk-service-navigation__container">
+            <nav aria-label="Menu" class="govuk-service-navigation__wrapper">
+              <button type="button" class="govuk-service-navigation__toggle govuk-js-service-navigation-toggle" aria-controls="navigation" hidden>Menu</button>
+              <ul class="govuk-service-navigation__list" id="navigation">
+                <%
           {
             'Get started' => ['getstarted', true, 'Get started'],
             'Features' => ['using-govuk-pay', true, 'Using GOV.UK Pay'],
@@ -105,18 +105,21 @@
             'Support' => ['support', true, 'Support'],
             'Sign in' => ['https://selfservice.payments.service.gov.uk/login', false, '']
           }.each do |title, url|
-        %> 
-        <li class="govuk-service-navigation__item<% if url[2] == current_page.data.title || inherit_active_state(title,current_page.data.title) %> govuk-service-navigation__item--active<% end %>">
+        %>
+                  <li
+                    class="govuk-service-navigation__item<% if url[2] == current_page.data.title || inherit_active_state(title,current_page.data.title) %> govuk-service-navigation__item--active<% end %>"
+                    aria-current="true"
+                  >
                     <%= link_to title, url[0], class: 'govuk-service-navigation__link', relative: url[1] %>
                   </li>
                 <% end %>
-          </ul>
-        </nav>
+              </ul>
+            </nav>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
     </header>
-    
+
     <%= yield %>
 
     <footer class="govuk-footer" role="contentinfo">
