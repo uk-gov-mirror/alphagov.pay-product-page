@@ -106,7 +106,7 @@
             'Sign in' => ['https://selfservice.payments.service.gov.uk/login', false, '']
           }.each do |title, url|
         %> 
-        <li class="govuk-service-navigation__item<% if url[2] == current_page.data.title %> govuk-service-navigation__item--active<% end %>">
+        <li class="govuk-service-navigation__item<% if url[2] == current_page.data.title || inherit_active_state(title,current_page.data.title) %> govuk-service-navigation__item--active<% end %>">
                     <%= link_to title, url[0], class: 'govuk-service-navigation__link', relative: url[1] %>
                   </li>
                 <% end %>

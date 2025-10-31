@@ -56,6 +56,15 @@ helpers do
     groups = text.to_s.scan(/(?:^\+)?\d+/)
     link_to text, "tel:#{groups.join ''}", className
   end
+
+  def inherit_active_state(nav_title, current_page_title)
+    if nav_title == "Features" && ["Cost benefits of Pay","GOV.UK payment pages","API integration","Recurring payments","Take payments by phone or post","GOV.UK Pay’s Payment Service Provider","Direct Debit","Apple Pay and Google Pay","Roadmap","Security and compliance"].include?(current_page_title)
+      true
+    else
+      false
+    end
+  end
+
 end
 
 activate :sprockets do |config|
